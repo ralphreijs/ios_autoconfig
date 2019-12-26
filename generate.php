@@ -127,7 +127,6 @@ header("Content-Disposition: attachment; filename=". $CONFIG_NAME);
 
 # Sign the mobileconfig
 $signcmd = `openssl smime -sign -in unsigned.mobileconfig -out profile/$CONFIG_NAME -signer $SERVER_CRT -inkey $SERVER_KEY -certfile $CA_CRT -outform der -nodetach`;
-$sign    = `$signcmd`;
 
 
 # Get the file contents
